@@ -1,7 +1,6 @@
  Todo Summary Assistant
 
-Welcome to my Todo Summary Assistant app — a full-stack web application designed to help users manage their tasks more efficiently and intelligently.  
-This app integrates an LLM (OpenAI) to generate a summary of your pending to-dos, which is then instantly sent to a Slack channel of your choice via an incoming webhook.
+Welcome to my Todo Summary Assistant app — a full-stack web application designed to help users manage their tasks more efficiently and intelligently Basically This app integrates an LLM (OpenAI) to generate a summary of your pending to-dos, which is then instantly sent to a Slack channel via an incoming webhook.
 
 ---
 
@@ -67,13 +66,13 @@ The backend will now call OpenAI’s API using this key to generate intelligent 
 
 ## Design and Architecture Decisions
 
-This project is structured to keep the frontend and backend loosely coupled, enabling independent development and deployment, possibly hosted on different platforms.
+This project is structured to keep the frontend and backend loosely coupled, enabling independent development and deployment, possibly hosted on different platforms for bothe front end and backend
 
 ---
 
 ### Frontend (`/client`)
 
-- Built with React.
+- Built with React+vite.
 - Uses Tailwind CSS for styling to create a responsive UI.
 - Components like `TodoInput`, `TodoList`, and `SummaryButton` are modular and easy to maintain.
 - State management is handled at the component level for simplicity and control.
@@ -82,7 +81,7 @@ This project is structured to keep the frontend and backend loosely coupled, ena
 
 ### Backend (`/server`)
 
-The backend is an Express.js server connected to MongoDB Atlas. It includes RESTful API routes, controller logic, and utility modules for OpenAI and Slack integrations.
+The backend is an Express.js server connected to MongoDB Atlas. It includes RESTful API routes liek ('/api/todos','/api/summarize'), controller logic, and utility modules for OpenAI and Slack integrations.
 
 ---
 
@@ -97,7 +96,7 @@ The backend is an Express.js server connected to MongoDB Atlas. It includes REST
 
 ### Controllers
 
-- `todoController.js` – Handles logic for CRUD operations related to todos.
+- `todoController.js` – Handles logic for CRUD operations related to todos of the users.
 - `summarizeController.js` – Handles logic for generating a summary from pending todos and sending it to Slack.
 
 ---
