@@ -8,7 +8,6 @@ import { ClipboardDocumentListIcon } from '@heroicons/react/24/outline';
 function App() {
   const [todos, setTodos] = useState([]);
   const [message, setMessage] = useState(null);
-
   const fetchTodos =async () => {
     try {
       const data = await getTodos();
