@@ -2,14 +2,14 @@ import { useState } from 'react';
 import { updateTodo, deleteTodo } from '../services/todoService';
 
 const TodoItem = ({ todo, refreshTodos }) => {
-  const [isediting, setediting] = useState(false);
+  const [isEditing, setEditing] = useState(false);
   const [newTitle, setNewTitle] = useState(todo.title);
 
   const handleSave = async () => {
     if (!newTitle.trim()) return;
     try {
       await updateTodo(todo._id, { title: newTitle.trim() });
-      setediting(false);
+      setEditing(false);
       refreshTodos();
     } catch (err) {
       console.error('Error updating todo:', err.message);
@@ -72,7 +72,7 @@ const TodoItem = ({ todo, refreshTodos }) => {
         )}
       </div>
       <div className="flex gap-2 ml-2">
-        {isediting ? (
+        {isEditing ? (
           <>
             <button
               onClick={handleSave}
@@ -82,7 +82,7 @@ const TodoItem = ({ todo, refreshTodos }) => {
             </button>
             <button
               onClick={() => {
-                setediting(false);
+                setEditing(false);
                 setNewTitle(todo.title);
               }}
               className="text-gray-500 hover:underline text-sm"
@@ -93,7 +93,7 @@ const TodoItem = ({ todo, refreshTodos }) => {
         ) : (
           <>
             <button
-              onClick={() => setediting(true)}
+              onClick={() => setEditing(true)}
               className="text-blue-600 hover:underline text-sm"
             >
               Edit

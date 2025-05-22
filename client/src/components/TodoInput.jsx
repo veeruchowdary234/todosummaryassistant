@@ -1,13 +1,13 @@
 import { useState } from 'react';
 
 const TodoInput = ({ onAdd }) => {
-  const [title, settitle] = useState('');
+  const [title, setTitle] = useState('');
 
   const handleSubmit = async () => {
     if (!title.trim()) return;
     try {
       await onAdd(title.trim()); 
-      settitle('');
+      setTitle('');
     } catch (err) {
       console.error('Error adding todo:', err.message);
     }
