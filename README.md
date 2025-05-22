@@ -19,7 +19,7 @@ cd todosummaryassistant
 cd server
 npm install
 cp .env.example .env     # Fill in real environment variable values
-npm run dev              # Starts the backend server on http://localhost:5000
+npm run dev              # Starts the backend server on http://localhost:4000
 ```
 
 ### Frontend Setup
@@ -27,7 +27,7 @@ npm run dev              # Starts the backend server on http://localhost:5000
 ```bash
 cd ../client
 npm install
-npm run dev              # Starts the frontend on http://localhost:3000
+npm run dev              # Starts the frontend using vite server
 ```
 
 ---
